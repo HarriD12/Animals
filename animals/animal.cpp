@@ -21,11 +21,15 @@ public:
 
 	void eat(string eat) {
 		cout << eat << "Yummy" << endl;
+		cout << eat << "MMMMMM" << endl;
 	}
 
-	void Details(string detials) {
-		cout << "Here are the details" << endl;
-		cout << "Name " << name << endl;
+	void Details() {
+		cout << "Species: " << species << endl;
+		cout << "Name: " << name << endl;
+		cout << "Colour: " << colour << endl;
+		cout << "Age: " << Age << endl;
+		cout << "Weight: " << Weight << endl;
 	}
 	// Defualt constructor
 	
@@ -52,23 +56,6 @@ int main() {
 	Animals Dog("BullDog", "Bob", "White", 30, 100, "Woof");
 
 
-	Cat.eat("Bill loves kibble");
-	Dog.eat("Bob loves Bones");
-
-	//Species
-	Dog.species = "BullDog";
-	Cat.species = "Persian";
-
-	// name
-	Cat.name = " Bill";
-	Dog.name = " Bob";
-
-	//colour
-	Cat.colour = "Black";
-	Dog.colour = "White";
-
-	Cat.makeNoise();
-	Dog.makeNoise();
 
 
 
@@ -101,13 +88,24 @@ int main() {
 		cout << "1. Say Hello" << endl;
 		cout << "2. Make a noise" << endl;
 		cout << "3. View details" << endl;
+		cout << "4. Eat" << endl;
+
 		cin >> sub_choice;
 		if (sub_choice == 1) {
 			Cat.sayHello();
 		}
 		else if (sub_choice == 2) {
 			Cat.makeNoise();
+
 		}
+		if (sub_choice == 3) {
+			Cat.Details();
+		}
+		else if(sub_choice == 4) {
+			Cat.eat("Mice");
+		}
+		
+		
 	}
 
 	if (choice == 2) {
@@ -118,6 +116,7 @@ int main() {
 		cout << "1. Say Hello" << endl;
 		cout << "2. Make a noise" << endl;
 		cout << "3. View details" << endl;
+		cout << "4. Eat" << endl;
 		cin >> sub_choice;
 		if (sub_choice == 1) {
 			Dog.sayHello();
@@ -126,6 +125,12 @@ int main() {
 			Dog.makeNoise();
 		}
 
+		if (sub_choice == 3) {
+			Dog.Details();
+		}
+		else if (sub_choice == 4) {
+			Dog.eat("Bone");
+		}
 
 
 		return 0;
