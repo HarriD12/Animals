@@ -23,8 +23,9 @@ public:
 		cout << eat << "Yummy" << endl;
 	}
 
-	void Details() {
+	void Details(string detials) {
 		cout << "Here are the details" << endl;
+		cout << "Name " << name << endl;
 	}
 	// Defualt constructor
 	
@@ -47,8 +48,9 @@ public:
 
 int main() {
 
-	Animals Cat;
-	Animals Dog;
+	Animals Cat("Persian", "Bill", "Black", 20, 120, "Meeow");
+	Animals Dog("BullDog", "Bob", "White", 30, 100, "Woof");
+
 
 	Cat.eat("Bill loves kibble");
 	Dog.eat("Bob loves Bones");
@@ -78,11 +80,7 @@ int main() {
 	Cat.Weight = 5;
 	Dog.Weight = 110;
 
-	int choice;
-	cin >> choice;
-
 	int sub_choice;
-
 	cout << "Main Menu" << endl;
 
 	cout << "Pick an Animal" << endl;
@@ -91,75 +89,46 @@ int main() {
 	cout << "1. Cat" << endl;
 	cout << "2. Dog" << endl;
 
+	int choice;
+	cin >> choice;
 	//Say hello
+
 	if (choice == 1) {
 		cout << "you have selected Cat" << endl;
-	}
-	else if (sub_choice == 1) {
-		Cat.sayHello();
-	}
 
-	if (choice == 2) {
-		cout << "you have selected Dog" << endl;
-
-	}
-	else if (sub_choice == 2) {
-		Dog.sayHello();
-	}
-
-	//noise
-	if (choice == 1) {
-		cout << "you have selected Cat" << endl;
-	}
-	else if (sub_choice == 3) {
-		Cat.makeNoise();
-	}
-
-	if (choice == 2) {
-		cout << "you have selected Dog" << endl;
-
-	}
-	else if (sub_choice == 4) {
-		Dog.makeNoise();
-
-	}
-
-	//Details
-	if (choice == 1) {
-		cout << "you have selected Cat" << endl;
-	}
-	else if (sub_choice == 5) {
-		
-		
-	}
-
-	if (choice == 2) {
-		cout << "you have selected Dog" << endl;
-
-	}
-	else if (sub_choice == 6) {
-		
-
-	}
-		cout << "Sub-Menu" << endl;
-
-		cout << "Pick an Interaction" << endl;
-		cout << "--------------" << endl;
-
-		cout << " 1.Say Hello" << endl;
-		cout << " 2.Say Hello" << endl;
-
-		cout << " 3.Make a noise" << endl;
-		cout << " 4.Make a noise" << endl;
-
-		cout << " 5.View details" << endl;
-		cout << " 6.View details" << endl;
-
-		cout << " 7.Eat" << endl;
-
-
+		cout << "Pick an interaction" << endl;
+		cout << "-------------------" << endl;
+		cout << "1. Say Hello" << endl;
+		cout << "2. Make a noise" << endl;
+		cout << "3. View details" << endl;
 		cin >> sub_choice;
+		if (sub_choice == 1) {
+			Cat.sayHello();
+		}
+		else if (sub_choice == 2) {
+			Cat.makeNoise();
+		}
+	}
+
+	if (choice == 2) {
+		cout << "you have selected Dog" << endl;
+
+		cout << "Pick an interaction" << endl;
+		cout << "-------------------" << endl;
+		cout << "1. Say Hello" << endl;
+		cout << "2. Make a noise" << endl;
+		cout << "3. View details" << endl;
+		cin >> sub_choice;
+		if (sub_choice == 1) {
+			Dog.sayHello();
+		}
+		else if (sub_choice == 2) {
+			Dog.makeNoise();
+		}
+
+
 
 		return 0;
-	
+
+	}
 }
